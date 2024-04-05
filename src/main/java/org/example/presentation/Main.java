@@ -1,4 +1,4 @@
-package org.example.presentation;
+package org.example.main;
 
 import org.example.business.Aluno;
 import org.example.business.Professor;
@@ -11,7 +11,7 @@ public class Main {
     public static void main (String[] args){
         Scanner sc = new Scanner(System.in);
         int op;
-        Aluno aluno = null;
+        ProfessorDB professoresDB = new ProfessorDB(new ArrayList<Professor>());
 
 
 
@@ -35,7 +35,17 @@ public class Main {
                 double nota3 = sc.nextDouble();
                 double nota4 = sc.nextDouble();
                 aluno = new Aluno(nome, cpf, dataNasc, nota1, nota2, nota3, nota4);
-            }else if (op==4){
+            }else if (op==2) {
+                System.out.println("Informe os dados de aluno: ");
+                String nome = sc.next();
+                String cpf = sc.next();
+                String dataNasc = sc.next();
+                double salario = sc.nextDouble();
+
+                Professor professor = new Professor(nome, cpf, dataNasc, salario);
+                professoresDB.salvarUmProfessor(professor);
+            }
+            else if (op==4){
                 System.out.println("Nome do aluno: " + aluno.getNome() +
                         "\nCPF do aluno: " + aluno.getCpf() +
                         "\nData de nascimento: " + aluno.getDataNasc() +
