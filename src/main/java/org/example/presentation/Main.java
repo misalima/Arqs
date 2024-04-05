@@ -4,7 +4,7 @@ import org.example.business.Aluno;
 import org.example.business.Professor;
 import org.example.persistence.ProfessorDB;
 
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Main {
@@ -12,6 +12,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int op;
         ProfessorDB professoresDB = new ProfessorDB(new ArrayList<Professor>());
+        Aluno aluno = null;
 
 
 
@@ -36,7 +37,7 @@ public class Main {
                 double nota4 = sc.nextDouble();
                 aluno = new Aluno(nome, cpf, dataNasc, nota1, nota2, nota3, nota4);
             }else if (op==2) {
-                System.out.println("Informe os dados de aluno: ");
+                System.out.println("Informe os dados de professor: ");
                 String nome = sc.next();
                 String cpf = sc.next();
                 String dataNasc = sc.next();
@@ -44,6 +45,8 @@ public class Main {
 
                 Professor professor = new Professor(nome, cpf, dataNasc, salario);
                 professoresDB.salvarUmProfessor(professor);
+
+                System.out.println(professoresDB.professoresArray.get(1).getNome());
             }
             else if (op==4){
                 System.out.println("Nome do aluno: " + aluno.getNome() +
