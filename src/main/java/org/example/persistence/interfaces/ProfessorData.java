@@ -7,4 +7,6 @@ import java.util.ArrayList;
 public interface ProfessorData {
     Professor salvarUmProfessor(Professor prof);
     ArrayList<Professor> obterTodosProfessores();
+
+    Professor obterUmProfessor(String nome);
 }

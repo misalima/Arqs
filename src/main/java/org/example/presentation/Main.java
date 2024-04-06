@@ -48,7 +48,7 @@ public class Main {
                 Professor professor = new Professor(nome, cpf, dataNasc, salario);
                 professoresDB.salvarUmProfessor(professor);
 
-                System.out.println(professoresDB.getProfessoresArray().get(0).getNome());
+                System.out.println(professoresDB.obterUmProfessor(professor.getNome()).getNome());
             }
             else if (op==4){
                 System.out.println("Nome do aluno: " + aluno.getNome() +

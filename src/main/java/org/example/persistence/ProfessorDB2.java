@@ -19,6 +19,14 @@ public class ProfessorDB2 implements ProfessorData {
         return prof;
     }
 
+    public Professor obterUmProfessor(String nome) {
+        for (Professor p: professoresArray) {
+            if(p.getNome().equals(nome)) {
+                return p;
+            }
+        }
+        return null;
+    }
     @Override
     public ArrayList<Professor> obterTodosProfessores() {
         return professoresArray;
