@@ -1,8 +1,10 @@
-package org.example.main;
+package org.example.presentation;
 
 import org.example.business.Aluno;
 import org.example.business.Professor;
 import org.example.persistence.ProfessorDB;
+import org.example.persistence.ProfessorDB2;
+import org.example.persistence.interfaces.ProfessorData;
 
 import java.util.*;
 
@@ -11,7 +13,7 @@ public class Main {
     public static void main (String[] args){
         Scanner sc = new Scanner(System.in);
         int op;
-        ProfessorDB professoresDB = new ProfessorDB(new ArrayList<Professor>());
+        ProfessorData professoresDB = new ProfessorDB2(new ArrayList<Professor>());
         Aluno aluno = null;
 
 
@@ -46,7 +48,7 @@ public class Main {
                 Professor professor = new Professor(nome, cpf, dataNasc, salario);
                 professoresDB.salvarUmProfessor(professor);
 
-                System.out.println(professoresDB.professoresArray.get(1).getNome());
+                System.out.println(professoresDB.getProfessoresArray().get(0).getNome());
             }
             else if (op==4){
                 System.out.println("Nome do aluno: " + aluno.getNome() +

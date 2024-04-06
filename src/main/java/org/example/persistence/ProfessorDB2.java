@@ -1,21 +1,21 @@
 package org.example.persistence;
 
 import org.example.business.Professor;
-import org.example.persistence.interfaces.professorData;
+import org.example.persistence.interfaces.ProfessorData;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class ProfessorDB implements professorData {
+public class ProfessorDB2 implements ProfessorData {
     ArrayList<Professor> professoresArray;
 
-    public ProfessorDB(ArrayList<Professor> professoresArray) {
+    public ProfessorDB2(ArrayList<Professor> professoresArray) {
         this.professoresArray = professoresArray;
     }
 
     @Override
     public Professor salvarUmProfessor(Professor prof) {
         professoresArray.add(prof);
+        System.out.println("Salvo");
         return prof;
     }
 
